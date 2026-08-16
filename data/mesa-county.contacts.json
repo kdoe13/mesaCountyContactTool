@@ -1,0 +1,31 @@
+{
+  "scrapedAt": "2026-08-16T23:36:32.727Z",
+  "bodies": {
+    "council": [
+      {
+        "name": "Bobbie Daniel",
+        "title": "County Commissioner",
+        "district": "District 2",
+        "email": "bobbie.daniel@mesacounty.us",
+        "phone": null,
+        "profileUrl": "https://www.mesacounty.us/departments-and-services/commissioners/bobbie-daniel"
+      },
+      {
+        "name": "Cody Davis",
+        "title": "County Commissioner",
+        "district": "District 1",
+        "email": "cody.davis@mesacounty.us",
+        "phone": null,
+        "profileUrl": "https://www.mesacounty.us/departments-and-services/commissioners/cody-davis"
+      },
+      {
+        "name": "JJ Fletcher",
+        "title": "County Commissioner",
+        "district": "District 3",
+        "email": "jj.fletcher@mesacounty.us",
+        "phone": null,
+        "profileUrl": "https://www.mesacounty.us/departments-and-services/commissioners/JJ-Fletcher"
+      }
+    ]
+  }
+}

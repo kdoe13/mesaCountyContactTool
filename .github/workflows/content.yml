@@ -1,0 +1,41 @@
+name: Fetch sheet content
+on:
+  schedule:
+    - cron: '30 13 * * *'   # daily
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  content:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: npm }
+      - run: npm ci
+      - name: Fetch content
+        id: fetch
+        run: node scraper/fetch-content.js || echo "failed=true" >> "$GITHUB_OUTPUT"
+      - name: Open or update issue on failure
+        if: steps.fetch.outputs.failed == 'true'
+        env: { GH_TOKEN: '${{ github.token }}' }
+        run: |
+          gh label create content-failure --color ee0701 --description "Scheduled sheet content fetch failed" 2>/dev/null || true
+          body="Sheet content fetch failed on $(date -u +%F); existing content.json files were left untouched."
+          existing="$(gh issue list --label content-failure --state open --json number --jq '.[0].number // empty' 2>/dev/null || true)"
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$body" || true
+          else
+            gh issue create --title "Sheet content fetch is failing" --body "$body" --label content-failure || true
+          fi
+      - name: Commit content updates
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add data/*.content.json
+          git diff --cached --quiet || git commit -m 'chore: sheet content update'
+          git pull --rebase
+          git push

@@ -1,0 +1,74 @@
+:root {
+  --bg: #f7f6f3; --surface: #ffffff; --ink: #1c2321; --muted: #5c6662;
+  --accent: #1d6a5a; --accent-ink: #ffffff; --border: #ddd8d0;
+  --radius: 10px; --shadow: 0 1px 3px rgb(0 0 0 / 8%);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14181a; --surface: #1e2427; --ink: #e8e6e1; --muted: #9aa5a0;
+    --accent: #4fb39c; --accent-ink: #0c1512; --border: #313a3e;
+    --shadow: 0 1px 3px rgb(0 0 0 / 40%);
+  }
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+.site-header { text-align: center; padding: 2rem 1rem 0.5rem; }
+.site-header h1 { margin: 0; font-size: clamp(1.4rem, 4vw, 2rem); }
+.tagline { color: var(--muted); margin: 0.25rem 0 1.25rem; }
+.tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+.tab {
+  border: 1px solid var(--border); background: var(--surface); color: var(--ink);
+  padding: 0.5rem 1.1rem; border-radius: 999px; cursor: pointer; font-size: 1rem;
+}
+.tab[aria-selected="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+main { max-width: 60rem; margin: 0 auto; padding: 1rem; }
+.site-footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 2rem 1rem 6rem; }
+.body-section { margin: 1.5rem 0; }
+.body-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+.body-head h2 { font-size: 1.15rem; margin: 0.5rem 0; }
+.select-all { background: none; border: none; color: var(--accent); cursor: pointer; font-size: 0.9rem; }
+.group-note { color: var(--muted); font-size: 0.85rem; margin: 0 0 0.5rem; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); gap: 0.6rem; }
+.person-card {
+  display: flex; flex-direction: column; gap: 0.15rem; text-align: left;
+  background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius);
+  padding: 0.7rem 0.9rem; cursor: pointer; box-shadow: var(--shadow);
+  color: var(--ink); font: inherit;
+}
+.person-card small { color: var(--muted); }
+.person-card.selected { border-color: var(--accent); outline: 2px solid var(--accent); outline-offset: -2px; }
+div.person-card { cursor: default; }
+.action-bar {
+  position: fixed; inset: auto 0 0 0; display: flex; gap: 0.75rem; align-items: center;
+  justify-content: center; padding: 0.75rem 1rem; background: var(--surface);
+  border-top: 1px solid var(--border); box-shadow: 0 -2px 8px rgb(0 0 0 / 10%);
+}
+.action-bar button { font: inherit; padding: 0.5rem 1.2rem; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg); color: var(--ink); cursor: pointer; }
+.action-bar button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.output { max-width: 60rem; margin: 0 auto; padding: 0 1rem 2rem; display: flex; flex-direction: column; gap: 0.7rem; }
+.output select, .output input, .output textarea {
+  font: inherit; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius); padding: 0.6rem 0.8rem; width: 100%;
+}
+.field { display: flex; flex-direction: column; gap: 0.3rem; }
+.field label { font-size: 0.85rem; font-weight: 600; }
+.salutation { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: flex-end; }
+.salutation-fields { display: flex; flex-wrap: wrap; gap: 0.6rem; flex: 1 1 100%; }
+.salutation-fields .field { flex: 1 1 12rem; }
+.salutation-fields input, .salutation-fields select { width: auto; }
+.send-btn {
+  display: block; text-align: center; background: var(--accent); color: var(--accent-ink);
+  padding: 0.8rem; border-radius: var(--radius); text-decoration: none; font-weight: 600;
+}
+.length-notice { color: var(--muted); font-size: 0.9rem; }
+.manual-copy summary { cursor: pointer; color: var(--accent); }
+.copy-row { display: flex; justify-content: space-between; align-items: center; padding: 0.35rem 0; }
+.copy-row button { font: inherit; border: 1px solid var(--border); background: var(--surface); color: var(--ink); border-radius: var(--radius); padding: 0.35rem 0.9rem; cursor: pointer; }
+.faq details { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.6rem 0.9rem; margin: 0.4rem 0; }
+.faq summary { cursor: pointer; font-weight: 600; }
+.links a, .group-note a, .salutation a { color: var(--accent); }

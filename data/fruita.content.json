@@ -1,0 +1,11 @@
+{
+  "fetchedAt": null,
+  "templates": [
+    {
+      "title": "General comment",
+      "subject": "A comment from a constituent",
+      "message": "Dear Council Members,\n\nI am a resident writing to share my thoughts on an issue that matters to me.\n\n[Describe the issue and what action you hope to see.]\n\nThank you for your service and for considering my input."
+    }
+  ],
+  "faqs": []
+}

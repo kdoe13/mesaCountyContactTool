@@ -1,0 +1,84 @@
+{
+  "sheets": { "templates": null, "faqs": null },
+  "locales": [
+    {
+      "id": "grand-junction",
+      "label": "Grand Junction",
+      "emailDomain": "gjcity.org",
+      "scrape": { "module": "grand-junction", "urls": { "list": "https://www.gjcity.org/313/City-Council" } },
+      "bodies": [
+        { "id": "council", "label": "City Council", "scraped": true, "expectedCount": 7 },
+        { "id": "offices", "label": "Key Offices", "staticMembers": [
+          { "name": "City Manager — Mike Bennett", "title": "Office of the City Manager", "email": "mike.bennett@gjcity.org" },
+          { "name": "City Clerk", "title": "Office of the City Clerk", "email": "cityclerk@gjcity.org" }
+        ] }
+      ],
+      "districts": {
+        "label": "Council District",
+        "options": ["District A", "District B", "District C", "District D", "District E"],
+        "mapUrl": "https://external-gis.gjcity.org/CheckCityCouncilDistricts/"
+      },
+      "links": [
+        { "label": "Agendas & Minutes", "url": "https://www.gjcity.org/129/Agendas-Minutes" },
+        { "label": "City Council page", "url": "https://www.gjcity.org/313/City-Council" }
+      ]
+    },
+    {
+      "id": "fruita",
+      "label": "Fruita",
+      "emailDomain": "fruita.org",
+      "scrape": { "module": "fruita", "urls": { "list": "https://www.fruita.org/citycouncil" } },
+      "bodies": [
+        { "id": "council", "label": "City Council", "scraped": true, "expectedCount": 7 },
+        { "id": "offices", "label": "Key Offices", "staticMembers": [
+          { "name": "City Manager — Shannon Vassen", "title": "Office of the City Manager", "email": "svassen@fruita.org" }
+        ] }
+      ],
+      "links": [
+        { "label": "City Council Agendas", "url": "https://www.fruita.org/729" },
+        { "label": "City Council page", "url": "https://www.fruita.org/citycouncil" }
+      ]
+    },
+    {
+      "id": "palisade",
+      "label": "Palisade",
+      "emailDomain": "townofpalisade.org",
+      "scrape": { "module": "palisade", "urls": { "list": "https://palisade.colorado.gov/board-of-trustees" } },
+      "bodies": [
+        { "id": "council", "label": "Board of Trustees", "scraped": true, "expectedCount": 7,
+          "groupEmail": "boardoftrustees@townofpalisade.org" },
+        { "id": "offices", "label": "Key Offices", "staticMembers": [
+          { "name": "Town Administrator", "title": "Town Administration", "email": "info@townofpalisade.org" },
+          { "name": "Town Clerk", "title": "Office of the Town Clerk", "email": "kfrasier@townofpalisade.org" }
+        ] }
+      ],
+      "links": [
+        { "label": "Board of Trustees (agendas on page)", "url": "https://palisade.colorado.gov/board-of-trustees" }
+      ]
+    },
+    {
+      "id": "mesa-county",
+      "label": "Mesa County",
+      "emailDomain": "mesacounty.us",
+      "scrape": { "module": "mesa-county", "urls": {
+        "list": "https://www.mesacounty.us/departments-and-services/commissioners",
+        "excludeSlugs": ["business-commissioners", "connect-us", "volunteer-opportunities", "public-hearing-information"]
+      } },
+      "bodies": [
+        { "id": "council", "label": "Board of County Commissioners", "scraped": true, "expectedCount": 3 },
+        { "id": "offices", "label": "Key Offices", "staticMembers": [
+          { "name": "County Administration", "title": "County Administrator's Office", "email": "mcadmin@mesacounty.us" },
+          { "name": "Clerk & Recorder", "title": "Office of the Clerk & Recorder", "email": "clerk@mesacounty.us" }
+        ] }
+      ],
+      "districts": {
+        "label": "Commissioner District",
+        "options": ["District 1", "District 2", "District 3"],
+        "mapUrl": "https://www.mesacounty.us/departments-and-services/commissioners"
+      },
+      "links": [
+        { "label": "Public Hearings & Agendas", "url": "https://www.mesacounty.us/departments-and-services/commissioners/business-commissioners/public-hearing-information" }
+      ]
+    }
+  ]
+}
