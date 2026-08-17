@@ -1,0 +1,63 @@
+{
+  "scrapedAt": "2026-08-16T23:36:32.347Z",
+  "bodies": {
+    "council": [
+      {
+        "name": "Greg Mikolai",
+        "title": "Mayor",
+        "district": null,
+        "email": null,
+        "phone": null,
+        "profileUrl": null
+      },
+      {
+        "name": "Sarah Matchett",
+        "title": "Mayor Pro-Tem",
+        "district": null,
+        "email": null,
+        "phone": null,
+        "profileUrl": null
+      },
+      {
+        "name": "Jeff Snook",
+        "title": "Trustee",
+        "district": null,
+        "email": null,
+        "phone": null,
+        "profileUrl": null
+      },
+      {
+        "name": "Rick Fox",
+        "title": "Trustee",
+        "district": null,
+        "email": null,
+        "phone": null,
+        "profileUrl": null
+      },
+      {
+        "name": "Ed Seymour",
+        "title": "Trustee",
+        "district": null,
+        "email": null,
+        "phone": null,
+        "profileUrl": null
+      },
+      {
+        "name": "JoAnn Rasmussen",
+        "title": "Trustee",
+        "district": null,
+        "email": null,
+        "phone": null,
+        "profileUrl": null
+      },
+      {
+        "name": "Amy Gekas",
+        "title": "Trustee",
+        "district": null,
+        "email": null,
+        "phone": null,
+        "profileUrl": null
+      }
+    ]
+  }
+}

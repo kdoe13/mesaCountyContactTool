@@ -1,0 +1,63 @@
+{
+  "scrapedAt": "2026-08-16T23:36:30.292Z",
+  "bodies": {
+    "council": [
+      {
+        "name": "Laurel Lutz",
+        "title": "Council President",
+        "district": "District D",
+        "email": "laurel.cole@gjcity.org",
+        "phone": null,
+        "profileUrl": "https://www.gjcity.org/316/Laurel-Cole"
+      },
+      {
+        "name": "Ben Van Dyke",
+        "title": "Council President Pro Tem",
+        "district": "District At-Large",
+        "email": "ben.vandyke@gjcity.org",
+        "phone": null,
+        "profileUrl": "https://www.gjcity.org/320/Ben-Van-Dyke"
+      },
+      {
+        "name": "Cody Kennedy",
+        "title": "Council Member",
+        "district": "District A",
+        "email": "codyken@gjcity.org",
+        "phone": null,
+        "profileUrl": "https://www.gjcity.org/1354/Cody-Kennedy"
+      },
+      {
+        "name": "Robert Ballard",
+        "title": "Council Member",
+        "district": "District E",
+        "email": "robert.ballard@gjcity.org",
+        "phone": null,
+        "profileUrl": "https://www.gjcity.org/319/Robert-Ballard"
+      },
+      {
+        "name": "Jason Nguyen",
+        "title": "Council Member",
+        "district": "District B",
+        "email": "jasonn@gjcity.org",
+        "phone": null,
+        "profileUrl": "https://www.gjcity.org/1353/Jason-Nguyen"
+      },
+      {
+        "name": "Anna Stout",
+        "title": "Council Member",
+        "district": "District C",
+        "email": "annas@gjcity.org",
+        "phone": null,
+        "profileUrl": "https://www.gjcity.org/330/Anna-Stout"
+      },
+      {
+        "name": "Scott Beilfuss",
+        "title": "Council Member",
+        "district": "District At-Large",
+        "email": "scottb@gjcity.org",
+        "phone": null,
+        "profileUrl": "https://www.gjcity.org/1355/Scott-Beilfuss"
+      }
+    ]
+  }
+}

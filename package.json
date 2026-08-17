@@ -1,0 +1,12 @@
+{
+  "name": "mesa-contact-tool",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test",
+    "scrape": "node scraper/scrape.js",
+    "content": "node scraper/fetch-content.js"
+  },
+  "dependencies": { "cheerio": "^1.0.0" }
+}

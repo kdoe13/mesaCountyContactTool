@@ -1,0 +1,63 @@
+{
+  "scrapedAt": "2026-08-16T23:36:30.892Z",
+  "bodies": {
+    "council": [
+      {
+        "name": "Matthew Breman",
+        "title": "Mayor",
+        "district": null,
+        "email": "mbreman@fruita.org",
+        "phone": "970-216-2889",
+        "profileUrl": null
+      },
+      {
+        "name": "Amy Miller",
+        "title": "Mayor Pro-Tem",
+        "district": null,
+        "email": "amiller@fruita.org",
+        "phone": "970-640-0751",
+        "profileUrl": null
+      },
+      {
+        "name": "Aaron Hancey",
+        "title": "Council Member",
+        "district": null,
+        "email": "ahancey@fruita.org",
+        "phone": "970-261-5413",
+        "profileUrl": null
+      },
+      {
+        "name": "Rich Parrish",
+        "title": "Council Member",
+        "district": null,
+        "email": "rparrish@fruita.org",
+        "phone": "970-210-1036",
+        "profileUrl": null
+      },
+      {
+        "name": "Todd Kumro",
+        "title": "Council Member",
+        "district": null,
+        "email": "tkumro@fruita.org",
+        "phone": "970-858-7675",
+        "profileUrl": null
+      },
+      {
+        "name": "Jeannine Purser",
+        "title": "Council Member",
+        "district": null,
+        "email": "jpurser@fruita.org",
+        "phone": "970-260-5413",
+        "profileUrl": null
+      },
+      {
+        "name": "Jared Prochnow",
+        "title": "Council Member",
+        "district": null,
+        "email": "jprochnow@fruita.org",
+        "phone": "970-234-1309",
+        "profileUrl": null
+      }
+    ]
+  }
+}
