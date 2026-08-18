@@ -14,7 +14,7 @@ const csvs = {
 };
 
 test('rows route by locale with "all" shared', async () => {
-  const out = await buildContent(config, async url => csvs[url]);
+  const out = await buildContent(config, async url => csvs[url], { readExisting: () => null });
   const fruita = out.get('fruita');
   assert.deepEqual(fruita.templates.map(t => t.title), ['General', 'Trails']);
   assert.deepEqual(fruita.faqs, [{ question: 'When are meetings?', answer: 'Tuesdays, 7pm' }]);

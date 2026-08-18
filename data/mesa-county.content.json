@@ -1,10 +1,10 @@
 {
-  "fetchedAt": null,
+  "fetchedAt": "2026-08-18T15:45:03.344Z",
   "templates": [
     {
-      "title": "General comment",
-      "subject": "A comment from a constituent",
-      "message": "Dear Commissioners,\n\nI am a resident writing to share my thoughts on an issue that matters to me.\n\n[Describe the issue and what action you hope to see.]\n\nThank you for your service and for considering my input."
+      "title": "DeFlock",
+      "subject": "A comment about ALPR's provided by Flock",
+      "message": "Dear Councillors,\\n\\nI am a resident writing to share my thoughts on ALPR use in the community.\\n\\n\\n\\nThank you so much!"
     }
   ],
   "faqs": []
