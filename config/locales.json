@@ -1,5 +1,8 @@
 {
-  "sheets": { "templates": null, "faqs": null },
+  "sheets": {
+    "templates": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQOYTc4qaQsUwozfI7UddJI3SDGZ9Q6cjm2RN4rVTP8SXjwANHFQLHpQlFYb5v1rlBXTndIb4WFeCZl/pub?gid=0&single=true&output=csv",
+    "faqs": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRPyNclTBLo57lBpMOZXfUiunjGTbsMstTN02lhTB8aa5rS1wmDd2NWmcM9cZ1yXzqkkhSBnyI7HDGh/pub?gid=0&single=true&output=csv"
+  },
   "locales": [
     {
       "id": "grand-junction",
