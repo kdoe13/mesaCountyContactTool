@@ -124,3 +124,30 @@ test('a successful fetch that resolves to zero rows for a locale does not wipe t
   // Palisade's own fetch was genuinely populated and is unaffected.
   assert.deepEqual(out.get('palisade').templates.map(t => t.title), ['General']);
 });
+
+test('literal \\n in a Sheet cell becomes a real newline in message and answer', async () => {
+  const escaped = {
+    'https://sheet/t.csv':
+      'locale,title,subject,message\nfruita,Greeting,Hi,"Dear council,\\n\\nI am a resident.\\n\\nThanks."\n',
+    'https://sheet/f.csv':
+      'locale,question,answer\nfruita,Two parts?,"First.\\n\\nSecond."\n',
+  };
+  const out = await buildContent(config, async url => escaped[url], { readExisting: () => null });
+  const fruita = out.get('fruita');
+  assert.equal(fruita.templates[0].message, 'Dear council,\n\nI am a resident.\n\nThanks.');
+  assert.equal(fruita.faqs[0].answer, 'First.\n\nSecond.');
+  // The subject line is deliberately left alone — a newline in a mailto
+  // subject is a header-injection shape, not a paragraph break.
+  assert.equal(fruita.templates[0].subject, 'Hi');
+});
+
+test('a genuine embedded newline in a quoted cell still works, and \\\\n is left alone', async () => {
+  const mixed = {
+    'https://sheet/t.csv':
+      'locale,title,subject,message\nfruita,Real,Hi,"Line one\nLine two"\npalisade,Escaped,Hi,"A literal \\\\n stays"\n',
+    'https://sheet/f.csv': 'locale,question,answer\n',
+  };
+  const out = await buildContent(config, async url => mixed[url], { readExisting: () => null });
+  assert.equal(out.get('fruita').templates[0].message, 'Line one\nLine two');
+  assert.equal(out.get('palisade').templates[0].message, 'A literal \\\\n stays');
+});
