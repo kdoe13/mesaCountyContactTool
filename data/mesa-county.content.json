@@ -1,11 +1,16 @@
 {
-  "fetchedAt": null,
+  "fetchedAt": "2026-08-18T15:23:22.358Z",
   "templates": [
     {
-      "title": "General comment",
-      "subject": "A comment from a constituent",
-      "message": "Dear Commissioners,\n\nI am a resident writing to share my thoughts on an issue that matters to me.\n\n[Describe the issue and what action you hope to see.]\n\nThank you for your service and for considering my input."
+      "title": "DeFlock",
+      "subject": "A comment about ALPR's provided by Flock",
+      "message": "Dear Councillors,\\n\\nI am a resident writing to share my thoughts on ALPR use in the community.\\n\\n\\n\\nThank you so much!"
     }
   ],
-  "faqs": []
+  "faqs": [
+    {
+      "question": "When are City Council meetings?",
+      "answer": "City Council holds their regular meetings on the 1st and 3rd Wednesday of each month at 5:30 p.m. in the City Hall Auditorium, 250 N 5th Street. These meetings are open to the public. Meeting agendas are posted the Friday afternoon prior to the Wednesday meeting on the City’s Agendas & Minutes webpage."
+    }
+  ]
 }
