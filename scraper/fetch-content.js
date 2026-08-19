@@ -9,6 +9,22 @@ const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const TEMPLATE_FIELDS = ['title', 'subject', 'message'];
 const FAQ_FIELDS = ['question', 'answer'];
 
+// Paragraph breaks are authored in the Sheet as the two literal characters
+// `\` `n`, because putting a real line break in a cell means Alt+Enter and
+// makes the column unreadable to edit. parseCsv handles genuine embedded
+// newlines correctly, so both spellings reach here — but a literal `\n` that
+// nothing converts ends up in the resident's email as the characters
+// backslash-n. Convert here, at the boundary, so the data files on disk hold
+// real newlines and the frontend needs no knowledge of the convention.
+//
+// Scans backslash escapes left to right rather than look-behind: a
+// `(^|[^\\])\\n` pattern silently drops the second break in a `\n\n`
+// paragraph gap, because the first match consumes the character the second
+// one needs to test. `\\n` (an escaped backslash followed by n) is left alone.
+function unescapeNewlines(value) {
+  return typeof value === 'string' ? value.replace(/\\(.)/g, (m, c) => (c === 'n' ? '\n' : m)) : value;
+}
+
 function defaultReadExisting(id) {
   try {
     return JSON.parse(readFileSync(join(ROOT, 'data', `${id}.content.json`), 'utf8'));
@@ -91,7 +107,7 @@ export async function buildContent(config, fetchImpl, { readExisting = defaultRe
     if (templates === null) {
       localeTemplates = getExisting()?.templates ?? [];
     } else {
-      const computed = forLocale(validTemplates.valid, l.id).map(({ title, subject, message }) => ({ title, subject, message }));
+      const computed = forLocale(validTemplates.valid, l.id).map(({ title, subject, message }) => ({ title, subject, message: unescapeNewlines(message) }));
       if (computed.length === 0 && (getExisting()?.templates?.length ?? 0) > 0) {
         localeTemplates = getExisting().templates;
         emptyFallbacks.push({ locale: l.id, section: 'templates' });
@@ -104,7 +120,7 @@ export async function buildContent(config, fetchImpl, { readExisting = defaultRe
     if (faqs === null) {
       localeFaqs = getExisting()?.faqs ?? [];
     } else {
-      const computed = forLocale(validFaqs.valid, l.id).map(({ question, answer }) => ({ question, answer }));
+      const computed = forLocale(validFaqs.valid, l.id).map(({ question, answer }) => ({ question, answer: unescapeNewlines(answer) }));
       if (computed.length === 0 && (getExisting()?.faqs?.length ?? 0) > 0) {
         localeFaqs = getExisting().faqs;
         emptyFallbacks.push({ locale: l.id, section: 'faqs' });
